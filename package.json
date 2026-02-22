@@ -5,7 +5,7 @@
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js",
+    "start": "cross-env PORT=3004 react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "@types/node": "^20",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "cross-env": "^10.1.0",
     "tailwindcss": "^4.1.4",
     "tw-animate-css": "^1.3.5",
     "typescript": "^5.8.3",
