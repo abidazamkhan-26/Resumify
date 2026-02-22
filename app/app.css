@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Mona Sans", ui-sans-serif, system-ui, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-dark-200: #1a202c;
+  --color-light-blue-100: #e2e8f0;
+  --color-light-blue-200: #cbd5e0;
+
+  --color-badge-green: #d1fae5;
+  --color-badge-red: #fee2e2;
+  --color-badge-yellow: #fef3c7;
+
+  --color-badge-green-text: #065f46;
+  --color-badge-red-text: #991b1b;
+  --color-badge-yellow-text: #92400e;
+}
+
+html,
+body {
+  @apply bg-gray-50;
+}
+
+main {
+  @apply min-h-screen pt-10;
+}
+h1 {
+  @apply text-5xl md:text-6xl text-gradient leading-tight tracking-tight font-bold;
+}
+
+h2 {
+  @apply text-2xl md:text-3xl text-gray-700 font-medium;
+}
+
+label {
+  @apply text-sm font-semibold text-gray-700 mb-1 block;
+}
+input {
+  @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 ease-in-out bg-white;
+}
+
+textarea {
+  @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 ease-in-out bg-white;
+}
+
+form {
+  @apply flex flex-col gap-6 w-full max-w-lg mx-auto;
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600;
+  }
+  .gradient-border {
+    @apply bg-white p-8 rounded-3xl shadow-xl border border-gray-100;
+  }
+  .primary-button {
+    @apply bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg px-6 py-3 transition duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:translate-y-0 w-full text-center flex items-center justify-center;
+  }
+  .resume-nav {
+    @apply flex flex-row justify-between items-center p-4 bg-white shadow-sm sticky top-0 z-50;
+  }
+  .resume-summary {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4;
+    .category {
+      @apply flex flex-col items-center justify-center bg-white rounded-xl p-6 shadow-sm border border-gray-100 gap-2 text-center transition hover:shadow-md;
+    }
+  }
+  .back-button {
+    @apply flex items-center gap-2 text-gray-600 hover:text-indigo-600 font-medium transition duration-200;
+  }
+  .auth-button {
+    @apply bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-full py-4 px-10 text-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 w-full max-w-md mx-auto block text-center;
+  }
+  .main-section {
+    @apply flex flex-col items-center gap-10 py-16 px-4 max-w-7xl mx-auto;
+  }
+  .page-heading {
+    @apply flex flex-col items-center gap-4 text-center max-w-3xl mx-auto;
+  }
+  .resumes-section {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full;
+  }
+
+  .resume-card {
+    @apply flex flex-col gap-4 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 h-full;
+  }
+
+  .resume-card-header {
+    @apply flex items-center justify-between border-b border-gray-100 pb-4 mb-2;
+  }
+
+  .feedback-section {
+    @apply flex flex-col gap-8 w-full lg:w-1/2 p-6 bg-white rounded-2xl shadow-sm border border-gray-100;
+  }
+
+  .navbar {
+    @apply flex justify-between items-center bg-white/80 backdrop-blur-md border border-white/20 rounded-2xl p-4 w-full max-w-6xl mx-auto shadow-sm sticky top-4 z-50;
+  }
+
+  .score-badge {
+    @apply flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .form-div {
+    @apply flex flex-col w-full;
+  }
+
+  .uplader-drag-area {
+    @apply flex flex-col items-center justify-center p-10 border-2 border-dashed border-gray-300 rounded-2xl bg-gray-50 hover:bg-gray-100 transition duration-200 cursor-pointer min-h-[250px];
+  }
+  .uploader-selected-file {
+    @apply flex items-center justify-between p-4 bg-white border border-gray-200 rounded-xl shadow-sm mt-4;
+  }
+}
+
+@utility bg-gradient {
+  @apply bg-gradient-to-br from-indigo-50 via-white to-purple-50;
+}
+
+@utility text-gradient {
+   @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600;
+}
+
+@utility gradient-hover {
+  @apply bg-gradient-to-r from-indigo-50 to-purple-50;
+}
+
+@utility primary-gradient {
+  @apply bg-gradient-to-r from-indigo-600 to-purple-600;
+}
+
+@utility primary-gradient-hover {
+  @apply bg-gradient-to-r from-indigo-700 to-purple-700;
+}
+
+@utility inset-shadow {
+   @apply shadow-inner;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
